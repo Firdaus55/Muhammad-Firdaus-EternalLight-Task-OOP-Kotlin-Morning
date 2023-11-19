@@ -10,7 +10,12 @@ Lengkapi fungsi myProfile di bawah ini dengan membuat variabel dengan ketentuan 
 Dan Cetak setiap variabel ke layar saat variable myProfile di panggil
  */
 fun myProfile() {
+    val firstName = "Muhammad"
+    val lastName = "Firdaus"
+    val age = 20
+    val isSingle = true
 
+    println("Haloo, nama saya adalah $firstName $lastName, dan saya berusia $age tahun, saya berstatus single $isSingle")
 }
 
 
@@ -19,7 +24,8 @@ fun myProfile() {
  *  Lengkapi fungsi di bawah ini agar dapat mencetak nilai dari parameter-parameter yang ada dengan fungsi println
  */
 fun groupDetail(groupId: String, groupMember: List<Any>, session: String): Any {
-    return ""
+
+    return Any()
 }
 
 /**
@@ -28,11 +34,10 @@ fun groupDetail(groupId: String, groupMember: List<Any>, session: String): Any {
  * Kemudian akses item yang berisi nama Anda dari variable tersebut, lalu jadikan nilai kembalian untuk fungsi myTeam ini
  *
  */
-fun myTeam(): List<Any> {
+fun myTeam(memberMassive: List<Any>): Any {
 
-    return listOf()
+    return memberMassive[2]
 }
-
 /**
  * Latihan 4
  * Lengkapi dan perbaiki isi fungsi totalMember() ini dengan rumus:
@@ -40,21 +45,33 @@ fun myTeam(): List<Any> {
  *      total mentor + jumlah anggota group
  *
  */
-fun totalMember(): Int {
-    val mentor = arrayOf<String>()
-    val countOfGroup = arrayOf<String>()
+fun totalMember(members: List<String>): Int {
+    val mentor = arrayOf<String>("Jovian", "Imam")
 
-    return 0
+    return mentor.size + members.size
 }
 
 fun main() {
+    val anggotaTeam = listOf<String>(
+        "Austin Nicholas Tham",
+        "Muhammad Firdaus",
+        "Mutiara Sabrina",
+        "Rahmad Noor Ikhsan",
+        "Dito Iqbal",
+        "Fadhila Risfaniatul Z",
+        "Aina Fazla",
+        "Rizka Hilmi P",
+        "Alfin Satriawan",
+        "Kayla Vyanca A",
+        "Adityo Khori R"
+    )
 
     myProfile()
 
-    val myTeam = myTeam()
+    val myTeam = myTeam(anggotaTeam)
     println("My team is: $myTeam")
 
-    val totalMember = totalMember()
+    val totalMember = totalMember(anggotaTeam)
     println("Total Member group : $totalMember")
 
     /**
@@ -62,6 +79,6 @@ fun main() {
      *  Ubah nilai argumen-argumen dari fungsi groupDetail di bawah ini sesuai dengan data group kamu
      *
      */
-    groupDetail("", listOf(), "")
+    groupDetail("Eternal Light", anggotaTeam, "Morning")
 
 }
