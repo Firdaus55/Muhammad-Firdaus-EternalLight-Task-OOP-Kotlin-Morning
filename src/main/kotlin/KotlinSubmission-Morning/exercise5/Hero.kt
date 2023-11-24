@@ -28,7 +28,7 @@ class Hero {
         }
     }
 
-    fun jalan() {
+    fun jalan(i: Int) {
         checkHealth()
         println("$name sedang berjalan...")
         health -= 1
